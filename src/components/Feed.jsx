@@ -1,8 +1,9 @@
 import React from 'react'
 
-export const Feed = () => {
+function Feed() {
   return (
     <div>Feed</div>
   )
 }
- 
+
+export default Feed
