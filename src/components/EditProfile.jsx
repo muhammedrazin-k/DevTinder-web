@@ -25,7 +25,6 @@ const EditProfile = ({user}) => {
         setsuccessful('')
         try {
             const res=await axios.patch(Base_URL+'/profile/edit',{firstName,lastName,age,gender,about,photoUrl},{withCredentials:true})
-            console.log(res.data.data)
             dispatch(addUser(res.data.data))
             setsuccessful('successfully edited your profile..')
             setShowtoast(true)

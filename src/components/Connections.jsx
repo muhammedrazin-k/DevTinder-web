@@ -11,7 +11,6 @@ function Connections() {
 
         try {
             const res=await axios.get(Base_URL + '/user/connections',{withCredentials:true})
-            console.log(res.data?.data)
             dispatch(addConnections(res.data?.data))
 
         } catch (err) {
@@ -26,7 +25,7 @@ function Connections() {
 
     if(!connections) return
 
-    if(connections.length===0) return <h1> there is no  connections yet</h1>
+    if(connections.length===0) return <h1 className='flex justify-center my-10'> there is no  connections yet</h1>
 
 
   return (
