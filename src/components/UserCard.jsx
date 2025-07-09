@@ -22,24 +22,25 @@ const UserCard = ({user}) => {
       return (
     
     <div>
-      <div className="card bg-stone-200 w-96 shadow-sm border" >
+      <div className="card bg-gradient-to-tr from-blue-300 to-fuchsia-300 w-80 sm:w-96 shadow-[15px_26px_25px_rgba(0,0,0,0.5)] h-[600px] " >
         <figure>
           <img
             src={photoUrl}
             alt="Shoes"
+            className="w-auto hover:scale-110 trasition-all duration-1000 ease-in-out"
           />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">{firstName +' '+lastName} </h2>
-          <p>
-            {about}
-          </p>
-        { age && gender &&<p>
+          <h2 className="card-title justify-center text-bold uppercase ">{firstName +' '+lastName} </h2>
+        { age && gender &&<p className="text-center  mt-[-14px]">
         {gender+' '+ age}
         </p>}
-          <div className="card-actions justify-center my-4">
-            <button className="btn btn-primary" onClick={()=>handleSendRequest('ignored',_id)}>Ignored</button>
-            <button className="btn btn-secondary" onClick={()=>handleSendRequest('interested',_id)}>Interested</button>
+          <p className="text-center">
+            {about}
+          </p>
+          <div className=" justify-center flex">
+            <button className="btn btn-primary w-[50%] mx-1 hover:shadow-[2px_14px_20px_rgba(0,0,0,0.5)] hover:scale-95 transition-all duration-[800ms] ease-in-out" onClick={()=>handleSendRequest('ignored',_id)}>Ignored</button>
+            <button className="btn btn-secondary w-[50%] mx-1 hover:shadow-[2px_13px_20px_rgba(0,0,0,0.5)] hover:scale-95 transition-all duration-[800ms] ease-in-out " onClick={()=>handleSendRequest('interested',_id)}>Interested</button>
           </div>
         </div>
       </div>

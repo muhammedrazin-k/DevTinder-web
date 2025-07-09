@@ -30,19 +30,19 @@ function Connections() {
 
   return (
     <div className=" justify-center my-10">
-        <h1 className='text-center text-3xl font-poppins font-bold text-red-900'>Connections</h1>
+        <h1 className='text-center text-3xl font-poppins font-bold text-white'>Connections</h1>
 
         {connections.map((connections)=>{
             const {_id,firstName,lastName,photoUrl,gender,age,about}=connections
 
             return(
-                <div key={_id} className='m-20 flex justify-center'>
-                <div  className='flex mx-10  p-5 border bg-stone-300 rounded-xl w-1/2 ' >
-                    <img className='rounded-full' src={photoUrl} alt="photo" width='180px' />
-                    <div className="text mx-10 text-left p-12">
-                        <h1 className='text-3xl font-bold font-poppins'>{firstName+' '+lastName}</h1>
+                <div key={_id} className='my-6 flex justify-center'>
+                <div  className='flex flex-col sm:flex-row items-center p-2  bg-gradient-to-r from-rose-300 to-orange-200 hover:rotate-2 hover:scale-110 hover:shadow-[2px_-15px_20px_rgba(0,0,0,0.9)] rounded-xl w-3/4 transition-all duration-[800ms]' >
+                    <img className='rounded-full w-[180px] h-[180px] object-cover' src={photoUrl} alt="photo"  />
+                    <div className="text  text-left p-6">
+                        <h1 className='text-3xl font-bold font-poppins uppercase'>{firstName+' '+lastName}</h1>
                         {(age && gender) && <p>{age +' '+ gender}</p>}
-                        <p className='text-xl'>{about}</p>
+                        <p className='text-lg leading-none lg:leading-tight'>{about}</p>
                     </div>
                 </div>
                 </div>

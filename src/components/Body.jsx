@@ -17,13 +17,14 @@ const Body=()=>{
         try {
             if(userData) return;
             const response=await axios.get(Base_URL+'/profile/view',{withCredentials:true})
+            
             dispatch(addUser(response.data))
             
         } catch (err) {
-            if(err.status==401){
+            if(err.response && err.response.status==401){
                 navigate('/login')
             }
-            console.log(err)
+            console.log('axios error:'+ err)
             
         }
     })
@@ -31,17 +32,18 @@ const Body=()=>{
     useEffect(()=>{
        
         fetchUser()
-    })
+    },[])
     
     
     return (
-        <div className="min-h-screen flex flex-col">
-            <Navbar/>
+        <div className="min-h-screen flex flex-col bg-gradient-to-r from-red-950 to-red-700">
+            {userData && <Navbar/>}
             <main className="flex-1">
 
             <Outlet/>
             </main>
-            <Footer/>
+
+            {userData && <Footer/>}
             
 
         </div>

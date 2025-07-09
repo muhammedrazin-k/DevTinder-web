@@ -3,17 +3,18 @@ import { useDispatch, useSelector } from "react-redux"
 import axios from "axios"
 import { Base_URL } from "../utils/constant"
 import { removeUser } from "../utils/userSlice"
-import { removefeed } from "../utils/feedSlice"
+import { clearfeed } from "../utils/feedSlice"
 
 const Navbar= ()=>{
   const user=useSelector((store=>store.user))
   const dispatch=useDispatch()
   const navigate=useNavigate()
+
   const handleLogout=async()=>{
     try {
       await axios.post(Base_URL+'/logout',{},{withCredentials:true})
       dispatch(removeUser())
-      dispatch(removefeed())
+      dispatch(clearfeed())
       return navigate('/login')
     } catch (err) {
       console.log(err)
@@ -21,15 +22,16 @@ const Navbar= ()=>{
     }
   }
     return(
-        <div className="navbar bg-base-300 shadow-sm">
-        <div className="flex-1">
-          <Link to='/' className="btn btn-ghost text-xl">DevTinder</Link>
+      
+        <div className="navbar bg-gradient-to-r from-black to-red-800 ">
+        <div className="flex-1 px-3">
+          <Link to='/' className="   text-xl text-white">DevTinder</Link>
         </div>
       {user && <div className="flex gap-2">
-        <div className="dropdown dropdown-end mx-5">
-        <p className="text-center">welcome ,{user.firstName} </p>
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full">
+        <div className="dropdown dropdown-end mx-5 text-center">
+        <p className="text-center text-white">welcome ,{user.firstName} </p>
+          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar ">
+            <div className="w-10 rounded-full ">
               <img
                 alt="Tailwind CSS Navbar component"
                 src={user.photoUrl} />

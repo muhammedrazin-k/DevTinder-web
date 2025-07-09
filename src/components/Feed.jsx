@@ -29,11 +29,11 @@ const Feed=()=> {
   },[])
 
   if(!feed||feed.length==0){
-    return <h3 className='text-center my-10'>there is no feed user now</h3>
+    return <h3 className='text-center my-10 text-white'>there is no feed user now.</h3>
   }
   
   return (
-    feed &&(<div className='flex justify-center my-4 ' >
+    feed &&(<div className='flex justify-center p-4 bg-gradient-to-r from-red-950 to-red-700' style={{minHeight:'90vh'}}>
       <UserCard user={feed[0]}/>
     </div>
   )
