@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import UserCard from "./userCard";
 import axios from "axios";
 import { Base_URL } from "../utils/constant";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { combineSlices } from "@reduxjs/toolkit";
+import UserCard from "./UserCard";
 
 const EditProfile = ({ user }) => {
   const [firstName, setFirstName] = useState(user.firstName);
