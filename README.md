@@ -1,12 +1,12 @@
-# React + Vite
+ # deployement
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+  - signup on AWS
+  - launch instance
+  - change the secret key permission through writing code in terminal like this ( chmod 400 <secretkey>.pem )
+  - connect to you remote machine through ( ssh -i "devTinder-secret123.pem" ubuntu@ec2-3-110-223-157.ap-south-1.compute.amazonaws.com ) 
+  - install nvm (node version manager ) by code provided by nodejs nvm linux (curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash)
+  - install node version same as your local (nvm install 22.19.0)
+  - clone the backend and front end from git in to new machine  
+  - frontend
+        - npm install 
+        - then do npm run build

@@ -4,7 +4,7 @@ import { Base_URL } from "../utils/constant";
 import { useDispatch } from "react-redux";
 import { removefeed } from "../utils/feedSlice";
 
-const UserCard = ({user}) => {
+const UserCard=({user}) => {
     const {_id ,firstName,lastName,age,about,photoUrl,gender}=user
     const dispatch=useDispatch()
 
