@@ -10,3 +10,48 @@
   - frontend
         - npm install 
         - then do npm run build
+
+    -so now we want to host our front end so we use nginx
+        - write "sudo apt update" for updating all our dependencies like ubunto version etc..
+        - write "sudo apt install nginx" for installing nginx
+        - write "sudo systemctl start nginx" to start nginx
+        - write "sudo systemctl enable nginx" to enable nginx
+        - while doing like enabling nginx they make path in nginx known as /var/www/html/ (we want to copy our dist folder and paste here)
+        - we want copy our dist folder and paste it into /var/www/html/ with the writting code of (" sudo scp -r dist/*  /var/www/html/ ") 
+        - enable port :80 of your instance in aws 
+
+
+  - backend
+        -allowed ec2 instance ip on mongo db server
+        - npm i pm2 -g
+        - pm2 start npm -- start
+        - pm2 logs
+        - pm2 list ,pm2 flush <name>, pm2 stop <name>, pm2 delete <name>
+
+
+    frontend running = http://3.108.252.209  (this was temporary each time running instance it will change)
+    backend running = http://3.108.252.209:3000/    (this was temporary each time running instance it will change)
+
+
+    map :3000 to /api via through nginx 
+    -------------------------------------
+
+        - go to nginx site-available folder to map :3000 to /api  (sudo nano /etc/nginx/sites-available/default)
+
+
+
+    nginx config:
+
+    server_name 3.108.252.209;
+
+    location /api/ {
+    rewrite ^/api/(.*)$ /$1 break;
+    proxy_pass http://localhost:3000;
+
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+}
+
+        - then resart nginx = sudo systemctl restart nginx 
