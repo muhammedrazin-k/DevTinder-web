@@ -55,3 +55,29 @@
 }
 
         - then resart nginx = sudo systemctl restart nginx 
+
+
+
+# Adding custome Domain name
+
+    - purchased domain name from godaddy
+    - signup on cloudflare & add new domain name
+    - change the name server on godaddy and point it to cloudflare
+    - wait for sometime till your  nameserver are updated
+    - DNS record: A devTinder.in  43.204.96.49
+    - enable ssl for website 
+
+
+# sending email via SES 
+    - create an IAM user
+    - give access to amazon SESfullAccess
+    - Amazon SES: create an identity
+    - verify your domain name
+    - verify an email address identity
+    - install AWS SDK v3 (from git hub documents)
+    - Setup SES client 
+    - Access credentials should be created in IAM under security credentials tab
+    - and the credentials to the env files 
+    - write code for SES client 
+    - Write code for Sending Email address
+    - Make the email dynamic  by passing more params to the run function
