@@ -81,3 +81,26 @@
     - write code for SES client 
     - Write code for Sending Email address
     - Make the email dynamic  by passing more params to the run function
+
+
+# Scheduling cron jobs in node js
+    -installing node-crone
+    - learning about cron expressions syntax - crontab-guru
+    - schedule a job
+    - learn about date-fns
+    - find all the unique emailId who have got connection request in previous day
+    - send Email
+    - explore queue mechanisms to send bulk emails (explore bee quee and bull) 
+    - explore amazone ses bulk emails
+
+# Razorpay payment integration
+    - sign up on Razorpay & complete KYC
+    - created a ui for premium page
+    - creating an api for create order in backend
+    - initialized razorpay in utils
+    - added key and secret in evn files
+    - creating order on razorpay 
+    - create schema and modal 
+    - save the order in payment collection 
+    - make the api dynamic
+    - set up webhook on your live Api  (not the localhost)
