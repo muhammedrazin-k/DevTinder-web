@@ -104,3 +104,13 @@
     - save the order in payment collection 
     - make the api dynamic
     - set up webhook on your live Api  (not the localhost)
+
+# Real time chat using websocket(socket.io)
+    - build ui for chat window 
+    - setup socket.io in backend
+    - npm i socket.io
+    - setup frontend socket.io-client
+    - intialize the chat
+    - create socket connection
+    - listen to the events
+    

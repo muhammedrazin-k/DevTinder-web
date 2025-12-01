@@ -40,7 +40,7 @@ const Requests = () => {
 
   return (
     <div className=" justify-center my-10">
-    <h1 className='text-center text-3xl font-poppins font-bold text-red-900 text-white'>Requests</h1>
+    <h1 className='text-center text-3xl font-poppins font-bold  text-white'>Requests</h1>
 
     {Requests.map((Request)=>{
         const {_id,firstName,lastName,photoUrl,gender,age,about}=Request.fromUserId
